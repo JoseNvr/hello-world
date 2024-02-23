@@ -1,11 +1,11 @@
-// import groovy.json.JsonSlurperClassic
+import groovy.json.JsonSlurperClassic
 
-// def jsonParse(def json){
-//     new groovy.json.JsonSlurperClassic().parseText(json)
-// }
+def jsonParse(def json){
+    new groovy.json.JsonSlurperClassic().parseText(json)
+}
 pipeline {
     agent { label 'master' }
-    enviroment { 
+    environment { 
         appName = "variable"
     }
     stages {
