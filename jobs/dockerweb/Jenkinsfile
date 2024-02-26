@@ -11,6 +11,15 @@ pipeline {
         name_final = "${name_container}${tag_imagen}${puerto_imagen}"
     }
     stages{
+        stage('pre'){
+            steps{
+                script{
+                    sh '''
+                        ls -lhas;pwd;whoami
+                    '''
+                }
+            }
+        }
         stage('stop/rm'){
             when {
                 expression {
