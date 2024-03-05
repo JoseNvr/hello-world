@@ -20,11 +20,10 @@ pipeline {
                 }
             }
         }
-        stage('restart docker engine'){
+        stage('run a docker command'){
             steps{
                 script{
                     sh '''
-                        service docker restart
                         docker ps
                     '''
                 }
