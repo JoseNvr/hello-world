@@ -20,6 +20,16 @@ pipeline {
                 }
             }
         }
+        stage('restart docker engine'){
+            steps{
+                script{
+                    sh '''
+                        service docker restart
+                        docker ps
+                    '''
+                }
+            }
+        }
         stage('stop/rm'){
             when {
                 expression {
